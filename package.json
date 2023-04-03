@@ -1,0 +1,26 @@
+{
+  "name": "youtube-converter",
+  "version": "1.0.0",
+  "description": "An app that converts youtube to audio and music easily",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clartik/Youtube-Converter.git"
+  },
+  "author": "KarTech",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Clartik/Youtube-Converter/issues"
+  },
+  "homepage": "https://github.com/Clartik/Youtube-Converter#readme",
+  "devDependencies": {
+    "electron": "^23.2.1"
+  },
+  "dependencies": {
+    "ytdl-core": "^4.11.3"
+  }
+}
