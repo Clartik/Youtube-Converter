@@ -11,13 +11,17 @@
 <body>
     <h1>Enter Youtube URL:</h1>
 
-    <div class="center">
-        <input type="text" placeholder="https://www.youtube.com/watch?v=############" id="urlInput">
+    <div>
+        <input type="text" placeholder="https://www.youtube.com/watch?v=############" id="urlInput" value="https://www.youtube.com/watch?v=uTQFi3A_q24"/>
         <button type="button" id="convertBtn">Convert</button>
     </div>
 
-    <p id="videoTitle"></p>
-    <img src="" id="videoThumbnail" width="300px", height="auto">
+    <div id="videoDetails">
+        <h2 id="videoTitle"></h2>
+        <img src="" id="videoThumbnail" width="300px", height="auto"/>
+        <br/>
+        <h4 id="videoBottomDetails" class="inline"></h4>
+    </div>
 
     <p id="errorText"></p>
 </body>
