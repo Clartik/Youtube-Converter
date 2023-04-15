@@ -21,6 +21,6 @@
     "electron": "^23.2.1"
   },
   "dependencies": {
-    "ytdl-core": "^4.11.3"
+    "ytdl-core": "^4.11.4"
   }
 }

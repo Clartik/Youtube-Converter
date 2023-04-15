@@ -1,10 +1,14 @@
 // Buttons
-const convertBtn = document.getElementById('convertBtn');
+const loadBtn = document.getElementById('loadBtn');
 const urlInput = document.getElementById('urlInput');
 
 const videoThumbnail = document.getElementById('videoThumbnail');
 const videoTitle = document.getElementById('videoTitle');
 const videoBottomDetails = document.getElementById('videoBottomDetails');
+
+const convertDiv = document.getElementById('convertDiv');
+const convertBtn = document.getElementById('convertBtn');
+const convertSelect = document.getElementById('convertSelect');
 
 const errorText = document.getElementById('errorText');
 
@@ -13,7 +17,11 @@ loadingCircle.classList.add('fa');
 loadingCircle.classList.add('fa-spinner');
 loadingCircle.classList.add('fa-spin');
 
-convertBtn.addEventListener('click', async () => {
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+loadBtn.addEventListener('click', async () => {
     videoTitle.innerText = '';
     videoBottomDetails.innerText = '';
     videoThumbnail.src = '';
@@ -23,8 +31,8 @@ convertBtn.addEventListener('click', async () => {
         return;
     }
 
-    convertBtn.innerText = "";
-    convertBtn.appendChild(loadingCircle);
+    loadBtn.innerText = "";
+    loadBtn.appendChild(loadingCircle);
 
     try {
         const videoInfo = await window.api.getBasicInfo(urlInput.value);
@@ -58,7 +66,25 @@ convertBtn.addEventListener('click', async () => {
         errorText.innerHTML = "Invalid URL!";
     }
     
-    convertBtn.innerText = "Convert";
+    loadBtn.innerText = "Load";
+    convertDiv.style.visibility = "visible";
+});
+
+convertBtn.addEventListener('click', () => {
+    errorText.innerHTML = ""
+
+    if (convertSelect.selectedIndex == 0) {
+        errorText.innerHTML = "Select a Type to Convert!"
+        return;
+    }
+
+    convertBtn.innerText = "";
+    convertBtn.appendChild(loadingCircle);
+
+    sleep(500).then(() => {
+        console.log("Convert Button Clicked!");
+        convertBtn.innerText = "Convert";
+    });
 });
 
 urlInput.addEventListener('keydown', () => {

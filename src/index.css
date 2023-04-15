@@ -13,6 +13,10 @@ label, p, h1, h2, h3, h4 {
     margin: 5px;
 }
 
+#loadBtn, #convertBtn {
+    background-color: red;
+}
+
 button {
     padding: 5px 10px;
     border-radius: 10px;
@@ -21,10 +25,6 @@ button {
     font-weight: bold;
     margin: 5px;
     cursor: pointer;
-}
-
-#convertBtn {
-    background-color: red;
 }
 
 input {
@@ -46,11 +46,20 @@ input {
     display: inline;
 }
 
-#videoDetails {
+#videoDetailsDiv {
     display: inline-block;
 }
 
 #videoThumbnail {
     border-radius: 10px;
     margin: 0px 5px;
+}
+
+select {
+    padding: 2px;
+}
+
+#convertDiv {
+    visibility: hidden;
+    margin-top: 10px;
 }
